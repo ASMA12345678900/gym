@@ -82,23 +82,24 @@
                                 <h2>Register Now</h2>
                                 <p>The First 7 Day Trial Is Completely Free With The Teacher</p>
                             </div>
-                            <form action="#" class="register-form">
+                            <form action="{{ route('user.store') }}" method="Post" class="register-form">
+                                @csrf
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <label for="name">First Name</label>
-                                        <input type="text" id="name">
+                                        <input type="text" id="name" name='FirstName'>
                                     </div>
                                     <div class="col-lg-6">
                                         <label for="email">Your email address</label>
-                                        <input type="text" id="email">
+                                        <input type="text" id="email" name='Email'>
                                     </div>
                                     <div class="col-lg-6">
                                         <label for="last-name">Last Name</label>
-                                        <input type="text" id="last-name">
+                                        <input type="text" name='LastName' id="">
                                     </div>
                                     <div class="col-lg-6">
                                         <label for="mobile">Mobile No*</label>
-                                        <input type="text" id="mobile">
+                                        <input type="text" name='Phone' id="mobile">
                                     </div>
                                 </div>
                                 <button type="submit" class="register-btn">Get Started</button>

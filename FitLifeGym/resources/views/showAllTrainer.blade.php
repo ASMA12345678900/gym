@@ -52,7 +52,7 @@
                                 <td>{{ $t->Trainer_Speciality }}</td>
                                 <td>{{ $t->Trainer_Description }}</td>
                                 <td>
-                                    <img src="{{ asset('public/upload/' . $t->Trainer_Image) }}" alt="">
+                                    <img src="{{ asset('/upload/' . $t->Trainer_Image) }}" alt="" style="width:166px;height: 101px;object-fit: cover;">
                                 </td>
                                 <td><a href="javascript:void(0)" class="btn btn-warning editBtn" data-toggle="modal" data-target="#myModal">Edit</a></td>
                                 <td>
@@ -83,7 +83,7 @@
 
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <form action="trainer" method="POST" id="form" enctype="multipart/form-data">
+                    <form action="/trainer" method="POST" id="form" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group">
@@ -129,8 +129,15 @@
             description =e.target.parentElement.previousElementSibling.previousElementSibling.innerText;
             image = e.target.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerText;
 
-            id = e.target.parentElement.previousElementSibling.previousElementSibling.previousElementSibling
-                .innerText;
+            id = e.target.parentElement
+            .previousElementSibling
+            .previousElementSibling
+            .previousElementSibling
+            .previousElementSibling
+            .previousElementSibling
+            .previousElementSibling
+            .innerText;
+
 
             $('#Trainer_Name').val(name);
             $('#Trainer_Email').val(email);
@@ -138,7 +145,7 @@
             $('#Trainer_Description').val(description);
             $('#Trainer_Image').val('').removeAttr('required');
 
-            $('#form').attr('action', 'trainer/' + id);
+            $('#form').attr('action', 'trainer/' + id );
             $('#form').append('<input type="hidden" name="_method" value="PUT">');
 
             $('#myModel').modal('show');

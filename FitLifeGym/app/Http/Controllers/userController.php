@@ -35,11 +35,12 @@ class userController extends Controller
     {
         //
 
-
         $user = new userModel();
-        $user-> user_Name = $request->user_Name;
-        $user->user_Email = $request->user_Email;
-        $user->Trainer_id = $request->Trainer_id;
+        $user-> FirstName = $request->FirstName;
+        $user-> LastName = $request->LastName;
+        $user->Email = $request->Email;
+        $user->Phone= $request->Phone;
+
 
 
         $user->save();

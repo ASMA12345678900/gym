@@ -32,6 +32,7 @@ class trainerController extends Controller
     public function store(Request $request)
     {
         //
+        return $request ;
         $image = $request->file('Trainer_Image'); // Fix the typo here
 
         $imagePath = time() . '_' . $image->getClientOriginalName();

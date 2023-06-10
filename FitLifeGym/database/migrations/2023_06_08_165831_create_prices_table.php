@@ -16,12 +16,12 @@ return new class extends Migration
         Schema::create('prices', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('planName');
-            $table->string('price')->after('planName');
+            $table->string('price');
             $table->string('duration');
             $table->string('personnal_Trainer');
             $table->string('Amount_of_people');
             $table->string('Number_of_visits');
-            $table->unsignedBigInteger('id_salle')->default(1);
+            $table->string('id_sale')->default(1);
             $table->timestamps();
         });
     }

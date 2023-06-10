@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Service;
+use App\Models\Price;
 
 class GymController extends Controller
 {
@@ -53,12 +54,13 @@ class GymController extends Controller
                 "name" => $request->name,
                 "description" => $request->description,
                 "image" => $imagePath,
-                'id_salle' => 1, // Valeur par défaut de id_salle
+                'id_salle' => 1 , // Valeur par défaut de id_salle
             ]);
 
         return response('tout va bien ');
     }
-    public function index2(){
+    public function index2(equest $request){
+
 
         $prices= Price::all();
         return view('gym.index', compact('prices'));
@@ -75,8 +77,16 @@ class GymController extends Controller
 
 public function store2(Request $request)
  {
-  Price::create($request->all());
-  return response("avec succes");
+    $price = new Price();
+    $price->planName = $request->planName ;
+    $price->price = $request->price ;
+    $price->duration = $request->duration ;
+    $price->personnal_Trainer = $request->personnal_Trainer ;
+    $price->Amount_of_people = $request->Amount_of_people ;
+    $price->Number_of_visits = $request->Number_of_visits ;
+    $price->id_sale = 1 ;
+    $price->save() ;
+      return response("avec succes");
 }
 
     /**

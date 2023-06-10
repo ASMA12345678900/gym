@@ -14,9 +14,11 @@ return new class extends Migration
         Schema::create('user_models', function (Blueprint $table) {
 
             $table->id();
-            $table->string('user_Name');
-            $table->string('user_Email')->unique();
-            $table->unsignedInteger('Trainer_id');
+            $table->string('FirstName');
+            $table->string('LastName');
+            $table->string('Phone');
+            $table->string('Email')->unique();
+            $table->string('Active_Prise')->default(0);
             $table->timestamps();
 
         });

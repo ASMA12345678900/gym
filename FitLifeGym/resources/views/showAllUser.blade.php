@@ -15,9 +15,7 @@
 
     <div class="jumbotron text-center">
         <h1>FITLIFE GYM</h1>
-        <div class="float-right mr-5">
-            <a href="" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add New user</a>
-        </div>
+        
 
     </div>
 
@@ -34,9 +32,10 @@
                     <thead>
                         <tr>
                             <td>Id</td>
-                            <td>user Name</td>
-                            <td>user Email</td>
-                            <td>Trainer id</td>
+                            <td>FirstName</td>
+                            <td>LastEmail</td>
+                            <td> Email</td>
+                            <td> Phone</td>
 
                             <td>Edit</td>
                             <td>Delete</td>
@@ -47,9 +46,10 @@
                             @foreach ( $user as $m)
                                 <tr>
                                     <td>{{ $m->id }}</td>
-                                    <td>{{ $m->user_Name }}</td>
-                                    <td>{{ $m->user_Email }}</td>
-                                    <td>{{ $m->Trainer_id }}</td>
+                                    <td>{{ $m->FirstName }}</td>
+                                    <td>{{ $m->LastName }}</td>
+                                    <td>{{ $m->Email }}</td>
+                                    <td>{{ $m->Phone}}</td>
 
 
                                     <td><a href="javascript:void(0)" class="btn btn-warning editBtn" data-toggle="modal" data-target="#myModal">Edit</a></td>
